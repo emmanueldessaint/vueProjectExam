@@ -1,5 +1,6 @@
 <template>
 <div>
+  <h1 class="titleProject">La boutique des T-shirts</h1>
   <div class="containerProducts">
     <div v-for="item in Tshirts" :key="item.id" class="cardProduct">
       <router-link :to="`/article/${item.id}`" style="text-decoration: none; color: inherit;">
@@ -106,5 +107,9 @@ export default {
 }
 .singleButton{
   margin-right:5px;
+}
+.titleProject{
+  text-align:center;
+  opacity:0.7;
 }
 </style>
