@@ -5,18 +5,19 @@
     <div v-for="item in Tshirts" :key="item.id" class="cardProduct">
       <router-link :to="`/article/${item.id}`" style="text-decoration: none; color: inherit;">
         <img :src="item.imageURL" class="imgProduct"/>
+        <div class="flagProduct">{{ item.flag }}</div>
         <div class="titleProduct">{{ item.name }}</div>
         <div class="priceProduct">{{ item.price }}</div>
       </router-link>
     </div>
   </div>
-    <div class="divButtons">
-      <button v-on:click="changePage(1)" v-bind:class="{ selected: ActuelPage === 1 }" class="singleButton">1</button>
-      <button v-on:click="changePage(2)" v-bind:class="{ selected: ActuelPage === 2 }" class="singleButton">2</button>
-      <button v-on:click="changePage(3)" v-bind:class="{ selected: ActuelPage === 3 }" class="singleButton">3</button>
-      <button v-on:click="changePage(4)" v-bind:class="{ selected: ActuelPage === 4 }" class="singleButton">4</button>
-    </div>
-  
+  <div class="divButtons">
+    <button v-on:click="changePage(1)" v-bind:class="{ selected: ActuelPage === 1 }" class="singleButton">1</button>
+    <button v-on:click="changePage(2)" v-bind:class="{ selected: ActuelPage === 2 }" class="singleButton">2</button>
+    <button v-on:click="changePage(3)" v-bind:class="{ selected: ActuelPage === 3 }" class="singleButton">3</button>
+    <button v-on:click="changePage(4)" v-bind:class="{ selected: ActuelPage === 4 }" class="singleButton">4</button>
+    <button v-on:click="changePage(5)" v-bind:class="{ selected: ActuelPage === 5 }" class="singleButton">5</button>
+  </div>
 </div>
 </template>
 
@@ -72,6 +73,7 @@ export default {
   margin-left:5%;
   margin-right:5%;
   text-decoration:none;
+  position:relative;
 }
 .cardProduct{
   margin:10px;
@@ -111,5 +113,17 @@ export default {
 .titleProject{
   text-align:center;
   opacity:0.7;
+}
+.flagProduct{
+  position:absolute;
+  margin-top:-183px;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding-left:8px;
+  padding-right:8px;
+  z-index:10000;
+  background-color:black;
+  color:white;
+  opacity:0.8;
 }
 </style>
